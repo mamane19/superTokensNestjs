@@ -7,5 +7,3 @@ export type AuthModuleConfig = {
   connectionURI: string;
   apiKey?: string;
 };
-
-
