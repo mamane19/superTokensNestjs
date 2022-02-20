@@ -7,7 +7,7 @@ export class AuthMiddleware implements NestMiddleware {
   constructor() {
     this.superTokensMiddleware = middleware();
   }
-  use(req: any, res: any, next: () => void) {
-    next();
+  use(req: Request, res: any, next: () => void) {
+    return this.superTokensMiddleware(req, res, next);
   }
 }
