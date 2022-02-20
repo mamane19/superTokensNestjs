@@ -4,7 +4,18 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [AuthModule],
+  imports: [
+    AuthModule.forRoot({
+      connectionURI: '',
+      appInfo: {
+        appName: '',
+        apiDomain: '',
+        websiteDomain: '',
+        apiBasePath: '',
+        websiteBasePath: '',
+      },
+    }),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
